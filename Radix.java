@@ -15,7 +15,7 @@ public class Radix {
     public static int length(int n) {
         int currpower = 1;
         int result = 0;
-        while(n / currpower > 0) {
+        while(n / currpower != 0) {
             ++result;
             currpower *= 10;
         } 
