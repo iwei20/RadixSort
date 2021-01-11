@@ -12,4 +12,14 @@ public class Radix {
         return (n / bexp(10, col)) % 10;
     }
 
+    public static int length(int n) {
+        int currpower = 1;
+        int result = 0;
+        while(n / currpower > 0) {
+            ++result;
+            currpower *= 10;
+        } 
+        return Math.max(1, result);
+    }
+
 }
