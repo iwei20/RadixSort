@@ -13,11 +13,11 @@ public class Radix {
     }
 
     public static int length(int n) {
-        int currpower = 1;
+        int a = Math.abs(n);
         int result = 0;
-        while(n / currpower != 0) {
+        while(a > 0) {
             ++result;
-            currpower *= 10;
+            a /= 10;
         } 
         return Math.max(1, result);
     }
