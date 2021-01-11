@@ -9,7 +9,7 @@ public class Radix {
     }
 
     public static int nth(int n, int col) {
-        return (n / bexp(10, col)) % 10;
+        return Math.abs((n / bexp(10, col)) % 10);
     }
 
     public static int length(int n) {
