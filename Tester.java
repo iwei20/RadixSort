@@ -21,5 +21,17 @@ public class Tester {
         
         int n = 382493849;
         System.out.println(Radix.nth(n, Radix.length(n) - 1)); // 3
+
+        MyLinkedList original = new MyLinkedList();
+        MyLinkedList[] bucket = new MyLinkedList[5];
+        for(int i = 0; i < bucket.length - 1; ++i) {
+            bucket[i] = new MyLinkedList();
+            for(int j = 0; j < 3; ++j) {
+                bucket[i].add("" + i + j);
+            }
+        }
+        bucket[4] = new MyLinkedList();
+        Radix.merge(original, bucket);
+        System.out.println(original);
     }
 }
