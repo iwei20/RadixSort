@@ -22,15 +22,15 @@ public class Tester {
         int n = 382493849;
         System.out.println(Radix.nth(n, Radix.length(n) - 1)); // 3
 
-        MyLinkedList original = new MyLinkedList();
-        MyLinkedList[] bucket = new MyLinkedList[5];
+        SortableLinkedList original = new SortableLinkedList();
+        SortableLinkedList[] bucket = new SortableLinkedList[5];
         for(int i = 0; i < bucket.length - 1; ++i) {
-            bucket[i] = new MyLinkedList();
+            bucket[i] = new SortableLinkedList();
             for(int j = 0; j < 3; ++j) {
-                bucket[i].add("" + i + j);
+                bucket[i].add(i * 10 + j);
             }
         }
-        bucket[4] = new MyLinkedList();
+        bucket[4] = new SortableLinkedList();
         Radix.merge(original, bucket);
         System.out.println(original);
     }
