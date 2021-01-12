@@ -33,5 +33,13 @@ public class Tester {
         bucket[4] = new SortableLinkedList();
         Radix.merge(original, bucket);
         System.out.println(original);
+
+        SortableLinkedList sortTest = new SortableLinkedList();
+        for(int i = 0; i < 20; ++i) {
+            sortTest.add((int)(Math.random() * 51));
+        }
+        System.out.println(sortTest);
+        Radix.radixSortSimple(sortTest);
+        System.out.println(sortTest);
     }
 }

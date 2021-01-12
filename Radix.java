@@ -28,4 +28,24 @@ public class Radix {
         }
     }
 
+    public static void radixSortSimple(SortableLinkedList data) {
+        SortableLinkedList[] buckets = new SortableLinkedList[10];
+        for(int i = 0; i < buckets.length; ++i) {
+            buckets[i] = new SortableLinkedList();
+        }
+        int digits = 0;
+        for(int i = 0; i < data.size(); ++i) {
+            digits = Math.max(digits, length(data.get(i)));
+        }
+
+        for(int i = 0; i < digits; ++i) {
+            for(; data.size() > 0;) {
+                int element = data.remove(0);
+                buckets[nth(element, i)].add(element);
+            }
+            merge(data, buckets);
+        }
+        
+    }
+
 }
