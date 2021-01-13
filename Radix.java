@@ -33,14 +33,12 @@ public class Radix {
         for(int i = 0; i < buckets.length; ++i) {
             buckets[i] = new SortableLinkedList();
         }
-        int digits = 0;
-        for(int i = 0; i < data.size(); ++i) {
-            digits = Math.max(digits, length(data.get(i)));
-        }
-
+        
+        int digits = 1;
         for(int i = 0; i < digits; ++i) {
             while(data.size() > 0) {
                 int element = data.remove(0);
+                digits = Math.max(digits, length(element));
                 buckets[nth(element, i)].add(element);
             }
             merge(data, buckets);
