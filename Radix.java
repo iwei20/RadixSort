@@ -39,13 +39,34 @@ public class Radix {
         }
 
         for(int i = 0; i < digits; ++i) {
-            for(; data.size() > 0;) {
+            while(data.size() > 0) {
                 int element = data.remove(0);
                 buckets[nth(element, i)].add(element);
             }
             merge(data, buckets);
         }
         
+    }
+
+    public static void radixSort(SortableLinkedList data) {
+        SortableLinkedList pos = new SortableLinkedList();
+        SortableLinkedList neg = new SortableLinkedList();
+
+        while(data.size() > 0) {
+            int first = data.remove(0);
+            if(first >= 0) {
+                pos.add(first);
+            } else {
+                neg.add(first);
+            }
+        }
+
+        radixSortSimple(pos);
+        radixSortSimple(neg);
+        while(neg.size() > 0) {
+            data.add(neg.remove(neg.size() - 1));
+        }
+        data.extend(pos);
     }
 
 }

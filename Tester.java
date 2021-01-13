@@ -39,7 +39,7 @@ public class Tester {
             sortTest.add((int)(Math.random() * 51));
         }
         System.out.println(sortTest);
-        Radix.radixSortSimple(sortTest);
+        Radix.radixSort(sortTest);
         System.out.println(sortTest);
     }
 }
