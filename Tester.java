@@ -41,5 +41,10 @@ public class Tester {
         System.out.println(sortTest);
         Radix.radixSort(sortTest);
         System.out.println(sortTest);
+        
+        for(int i = 0; i < (int)1e6; ++i) {
+            sortTest.add((int)((Math.random() - 0.5) * 51));
+        }
+        Radix.radixSort(sortTest);
     }
 }
