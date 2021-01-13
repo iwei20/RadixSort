@@ -13,13 +13,7 @@ public class Radix {
     }
 
     public static int length(int n) {
-        int a = Math.abs(n);
-        int result = 0;
-        while(a > 0) {
-            ++result;
-            a /= 10;
-        } 
-        return Math.max(1, result);
+        return (int) Math.log10(n) + 1;
     }
 
     public static void merge(SortableLinkedList original, SortableLinkedList[] buckets) {
