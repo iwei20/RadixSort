@@ -46,5 +46,7 @@ public class Tester {
             sortTest.add((int)((Math.random() - 0.5) * 51));
         }
         Radix.radixSort(sortTest);
+
+        Radix.radixSort(new SortableLinkedList());
     }
 }
