@@ -38,7 +38,7 @@ public class Radix {
         for(int i = 0; i < digits; ++i) {
             while(data.size() > 0) {
                 int element = data.remove(0);
-                digits = Math.max(digits, length(element));
+                if(i == 0) digits = Math.max(digits, length(element));
                 buckets[nth(element, i)].add(element);
             }
             merge(data, buckets);
